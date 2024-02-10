@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
         speedVector = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0f);
         if (speedVector != Vector3.zero)
         {
+
             MovePlayer();
             animator.SetFloat("moveX", speedVector.x);
             animator.SetFloat("moveY", speedVector.y);
