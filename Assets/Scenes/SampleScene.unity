@@ -7618,6 +7618,8 @@ GameObject:
   - component: {fileID: 2030158263}
   - component: {fileID: 2030158265}
   - component: {fileID: 2030158266}
+  - component: {fileID: 2030158268}
+  - component: {fileID: 2030158267}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -7686,7 +7688,7 @@ Transform:
   m_GameObject: {fileID: 2030158262}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.319635, y: 1.8169842, z: 0.19699685}
+  m_LocalPosition: {x: 5.5, y: 1.04, z: 0.19699685}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7718,7 +7720,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 7
 --- !u!58 &2030158266
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -7754,6 +7756,41 @@ CircleCollider2D:
   m_Offset: {x: -0.12, y: -0.25}
   serializedVersion: 2
   m_Radius: 1.69
+--- !u!114 &2030158267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030158262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5344c559111379e458411f8e13e15cc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isAwake: 0
+  isReady: 0
+--- !u!95 &2030158268
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030158262}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
