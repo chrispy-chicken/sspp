@@ -59,13 +59,13 @@ public class PurpleMonsterCutscene : MonoBehaviour
             {
                 // wait a bit then lerp the color to white
                 StartCoroutine(WaitAndLerp());
-                stopper = true; // idk man spaghetti code if you remove this it breaks
+                stopper = true; // idk man spaghetti code, if you remove this it breaks
                 isAwake = false;
             }
 
             if (startColoring)
             {
-                sr.color = Color.Lerp(sr.color, new Color(1, 1, 1, 1), 0.01f);
+                sr.color = Color.Lerp(sr.color, new Color(1, 1, 1, 1), 0.04f); //TODO appears to be a magic number, 0.01 is what works in the unity editor, but 0.04 is what works in the build
                 sh.PlayAppears();
                 if (sr.color == new Color(1, 1, 1, 1))
                 {
@@ -86,7 +86,7 @@ public class PurpleMonsterCutscene : MonoBehaviour
 
     IEnumerator WaitAndLerp()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3f);
         startColoring = true;
     }
 
@@ -117,7 +117,7 @@ public class PurpleMonsterCutscene : MonoBehaviour
 
     IEnumerator WaitAndSetSprite()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
         ChangeSprite(0);
         sr.flipX = true;
         

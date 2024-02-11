@@ -13,8 +13,8 @@ public class CameraMovement : MonoBehaviour
     void Start()
     {
         // with different areas this might need to be adjusted with a lookup table or something
-        maxPos = new Vector2(3f, 3f);
-        minPos = new Vector2(-3f, -3f); 
+        maxPos = new Vector2(5.3f, 2f);
+        minPos = - maxPos; 
     }
     void LateUpdate()
     {

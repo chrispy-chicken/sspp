@@ -150,7 +150,7 @@ Transform:
   m_GameObject: {fileID: 28465550}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.234, y: 4.41, z: 0}
+  m_LocalPosition: {x: -6.7440004, y: 4.9800005, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2251,7 +2251,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2276,9 +2276,9 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.68, z: -10}
+  m_LocalPosition: {x: 0, y: 0.37, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 255750827}
   m_Father: {fileID: 0}
@@ -2401,7 +2401,7 @@ Transform:
   m_GameObject: {fileID: 934218348}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.82, y: 4.57, z: 0}
+  m_LocalPosition: {x: 7.94, y: 5.28, z: 0}
   m_LocalScale: {x: 5, y: 2, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2712,7 +2712,7 @@ Transform:
   m_GameObject: {fileID: 1089243207}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.234, y: 4.41, z: 0}
+  m_LocalPosition: {x: -8.744, y: 4.9800005, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8237,7 +8237,7 @@ Transform:
   m_GameObject: {fileID: 1438330402}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.24, y: 4.41, z: 0}
+  m_LocalPosition: {x: -9.75, y: 4.98, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8605,7 +8605,7 @@ Transform:
   m_GameObject: {fileID: 1899374333}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.234, y: 4.41, z: 0}
+  m_LocalPosition: {x: -7.7440004, y: 4.9800005, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8855,7 +8855,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5344c559111379e458411f8e13e15cc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isReady: 0
+  isReady: 1
   sprites:
   - {fileID: 1280293788, guid: 3c154aeccb005a24ab14ca8bd2eb9cf6, type: 3}
   - {fileID: -2094350267, guid: 3c154aeccb005a24ab14ca8bd2eb9cf6, type: 3}

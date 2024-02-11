@@ -36,6 +36,11 @@ public class PurpleMonsterBossAI : MonoBehaviour
     {
         if (isActive)
         {
+            if (rb.constraints != RigidbodyConstraints2D.FreezeRotation)
+            {
+                rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+            }
+
             CheckForFlip();
             Move();
         }
@@ -72,6 +77,7 @@ public class PurpleMonsterBossAI : MonoBehaviour
     }
     private void Move()
     {
+
         if (stopMoving)
         {
             return;
@@ -84,6 +90,7 @@ public class PurpleMonsterBossAI : MonoBehaviour
             OpenMouth();
             StartCoroutine(CloseMouthAfterTime());
         }
+
         rb.MovePosition(Vector2.MoveTowards(transform.position, player.transform.position, speed));
     }
 
@@ -98,12 +105,14 @@ public class PurpleMonsterBossAI : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // disable collision between the player and the boss for a bit
-        if (collision.gameObject.tag == "Player")
-        {
-            stopMoving = true;
-            Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>(), true);
-            player.GetComponent<PlayerMovement>().TakenDamageAndInvincible();
-            StartCoroutine(EnableCollision());
+        if (isActive) {
+            if (collision.gameObject.tag == "Player")
+            {
+                stopMoving = true;
+                Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>(), true);
+                player.GetComponent<PlayerMovement>().TakenDamageAndInvincible();
+                StartCoroutine(EnableCollision());
+            }
         }
     }
 

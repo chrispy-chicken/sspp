@@ -18,7 +18,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (health == 0)
         {
-            // game over
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Main Menu 1");
         }
         foreach (GameObject heart in hearts)
         {
