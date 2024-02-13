@@ -13,7 +13,17 @@ public class CameraMovement : MonoBehaviour
     void Start()
     {
         // with different areas this might need to be adjusted with a lookup table or something
-        maxPos = new Vector2(5.5f, 2f);
+        bool freecam = true;
+
+        
+
+        maxPos = new Vector2(5f, 2f);
+
+        if (freecam)
+        {
+            maxPos = new Vector2(1000f, 1000f);
+        }
+
         minPos = - maxPos; 
     }
     void LateUpdate()
