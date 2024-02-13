@@ -30,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
     {
         // 2d sprite movement with the wasd keys
         speedVector = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0f).normalized;
+        
         if (speedVector != Vector3.zero)
         {
 
