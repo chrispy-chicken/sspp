@@ -41,7 +41,7 @@ public class PurpleMonsterCutscene : MonoBehaviour
         }
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (transform.position.x < 5f && !isReady)
         {
@@ -65,7 +65,7 @@ public class PurpleMonsterCutscene : MonoBehaviour
 
             if (startColoring)
             {
-                sr.color = Color.Lerp(sr.color, new Color(1, 1, 1, 1), 0.04f); //TODO appears to be a magic number, 0.01 is what works in the unity editor, but 0.04 is what works in the build
+                sr.color = Color.Lerp(sr.color, new Color(1, 1, 1, 1), 0.04f); //Solved? //TODO appears to be a magic number, 0.01 is what works in the unity editor, but 0.04 is what works in the build
                 sh.PlayAppears();
                 if (sr.color == new Color(1, 1, 1, 1))
                 {
