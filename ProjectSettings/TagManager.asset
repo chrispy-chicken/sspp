@@ -43,15 +43,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: TileLayer
+    uniqueID: 3392321323
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Collision Tiles
-    uniqueID: 4250941897
-    locked: 0
   - name: Player
     uniqueID: 2425651459
-    locked: 0
-  - name: Layer 3
-    uniqueID: 4189426099
     locked: 0
