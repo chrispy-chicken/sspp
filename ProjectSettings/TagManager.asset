@@ -9,6 +9,8 @@ TagManager:
   - appears
   - heart
   - Stamina
+  - Box
+  - boxDot
   layers:
   - Default
   - TransparentFX

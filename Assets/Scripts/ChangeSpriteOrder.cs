@@ -24,7 +24,7 @@ public class ChangeSpriteOrder : MonoBehaviour
         else
         {
             // set sr order in layer to 1
-            sr.sortingOrder = 0;
+            sr.sortingOrder = 1;
         }
     }
 }
