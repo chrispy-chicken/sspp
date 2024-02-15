@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed = 0.1f;
     private Rigidbody2D rb;
-    private Vector3 speedVector;
+    public Vector3 speedVector;
     private Animator animator;
     private SpriteRenderer sr;
     PlayerHealth playerHealth;
