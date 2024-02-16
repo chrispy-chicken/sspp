@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed = 0.1f;
     private Rigidbody2D rb;
-    private Vector3 speedVector;
+    public Vector3 speedVector;
     private Animator animator;
     private SpriteRenderer sr;
     PlayerHealth playerHealth;
@@ -97,4 +97,20 @@ public class PlayerMovement : MonoBehaviour
             count++;
         }
     }
+
+    void OnCollisionEnter2D (Collision2D other) 
+	{   
+        if (other.gameObject.tag == "Box")
+        {
+            animator.SetBool("pushing", true);
+        }
+	}
+
+    void OnCollisionExit2D (Collision2D other) 
+	{
+		if (other.gameObject.tag == "Box")
+        {
+            animator.SetBool("pushing", false);
+        }
+	}
 }
