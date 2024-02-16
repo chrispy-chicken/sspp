@@ -54,7 +54,6 @@ SpriteAtlas:
     isAtlasV2: 0
     cachedData: {fileID: 0}
     packedSpriteRenderDataKeys:
-    - df8f986151df9e84991299d490876dd4: 21300000
     - 389be3483ef26ae4886e2b0a97fdaff1: 21300000
     - 6ebfdd294e4117e47ab949b65ba28083: -205406970
     - 6ebfdd294e4117e47ab949b65ba28083: -835253280
@@ -1400,7 +1399,6 @@ SpriteAtlas:
     - 64c3b73db75e7974f833c6c7cf58db62: 1876143227
     - 64c3b73db75e7974f833c6c7cf58db62: 840841622
     - 64c3b73db75e7974f833c6c7cf58db62: 730229120
-    - c575bd4dc5f22f943a131ee236e15b72: 21300000
     - d21555ce72e390f49ba41fd54c373b1b: 21300842
     - d21555ce72e390f49ba41fd54c373b1b: 21300870
     - d21555ce72e390f49ba41fd54c373b1b: 21300046
@@ -2360,7 +2358,6 @@ SpriteAtlas:
     - d21555ce72e390f49ba41fd54c373b1b: 21301568
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
-  - {fileID: 21300000, guid: df8f986151df9e84991299d490876dd4, type: 3}
   - {fileID: 21300000, guid: 389be3483ef26ae4886e2b0a97fdaff1, type: 3}
   - {fileID: -205406970, guid: 6ebfdd294e4117e47ab949b65ba28083, type: 3}
   - {fileID: -835253280, guid: 6ebfdd294e4117e47ab949b65ba28083, type: 3}
@@ -3706,7 +3703,6 @@ SpriteAtlas:
   - {fileID: 1876143227, guid: 64c3b73db75e7974f833c6c7cf58db62, type: 3}
   - {fileID: 840841622, guid: 64c3b73db75e7974f833c6c7cf58db62, type: 3}
   - {fileID: 730229120, guid: 64c3b73db75e7974f833c6c7cf58db62, type: 3}
-  - {fileID: 21300000, guid: c575bd4dc5f22f943a131ee236e15b72, type: 3}
   - {fileID: 21300842, guid: d21555ce72e390f49ba41fd54c373b1b, type: 3}
   - {fileID: 21300870, guid: d21555ce72e390f49ba41fd54c373b1b, type: 3}
   - {fileID: 21300046, guid: d21555ce72e390f49ba41fd54c373b1b, type: 3}
@@ -4665,7 +4661,6 @@ SpriteAtlas:
   - {fileID: 21301512, guid: d21555ce72e390f49ba41fd54c373b1b, type: 3}
   - {fileID: 21301568, guid: d21555ce72e390f49ba41fd54c373b1b, type: 3}
   m_PackedSpriteNamesToIndex:
-  - Lamp_red
   - mainlevbuild
   - Overworld_827
   - Overworld_837
@@ -6011,7 +6006,6 @@ SpriteAtlas:
   - Painting_3
   - Painting_0
   - Painting_1
-  - Lamp_green
   - mainlevbuild_421
   - mainlevbuild_435
   - mainlevbuild_23

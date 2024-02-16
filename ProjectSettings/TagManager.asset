@@ -11,6 +11,7 @@ TagManager:
   - Stamina
   - Box
   - boxDot
+  - DialogueCanvas
   layers:
   - Default
   - TransparentFX
@@ -53,4 +54,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 2425651459
+    locked: 0
+  - name: Dialogue
+    uniqueID: 3229906815
     locked: 0

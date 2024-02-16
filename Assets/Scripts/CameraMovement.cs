@@ -13,7 +13,7 @@ public class CameraMovement : MonoBehaviour
     void Start()
     {
         // with different areas this might need to be adjusted with a lookup table or something
-        bool freecam = false;
+        bool freecam = true;
 
         
 

@@ -6,18 +6,24 @@ public class DoorHandler : MonoBehaviour
 {
     // coordinaten van plek waar je naartoe teleporteert
     public Vector3 targetLocation = new Vector3(0, 0, 0);
+    public GameObject[] assignedLamps;
+    private List<LampHandler> lampHandlers = new List<LampHandler>();
 
     public bool unlocked = false;
     public Sprite[] spriteArray;
     public SpriteRenderer spriteRenderer;
 
     public Animator transition;
-    public float transitionTime = 0.6f;
+    public float transitionTime = 0.1f;
 
     // Start is called before the first frame update
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        foreach (var assignedLamp in assignedLamps)
+        {
+            lampHandlers.Add(assignedLamp.GetComponent<LampHandler>());
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -33,16 +39,27 @@ public class DoorHandler : MonoBehaviour
 
     public void OpenTheNoorOrCloseTheNoorKutLangeNaamFunctieLol(bool open)
     {   
+        if (spriteRenderer == null)
+        {
+            return;
+        }
         // sesam open
         if (open) 
         {
-            spriteRenderer.sprite = spriteArray[1]; 
+            unlocked = true;
+            spriteRenderer.sprite = spriteArray[1];
         }
 
         // sesam dicht
         else 
         {
+            unlocked = false;
             spriteRenderer.sprite = spriteArray[0]; 
+        }
+
+        foreach (var lampHandler in lampHandlers)
+        {
+            lampHandler.UpdateSprite(open);
         }
     }
 
@@ -54,8 +71,5 @@ public class DoorHandler : MonoBehaviour
         yield return new WaitForSeconds(transitionTime);
         // teleporteren
         other.transform.position = new Vector2 (targetLocation.x, targetLocation.y);
-        
-        yield return new WaitForSeconds(0.5f);
-
     }
 }
