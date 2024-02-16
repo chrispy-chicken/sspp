@@ -97,4 +97,20 @@ public class PlayerMovement : MonoBehaviour
             count++;
         }
     }
+
+    void OnCollisionEnter2D (Collision2D other) 
+	{   
+        if (other.gameObject.tag == "Box")
+        {
+            animator.SetBool("pushing", true);
+        }
+	}
+
+    void OnCollisionExit2D (Collision2D other) 
+	{
+		if (other.gameObject.tag == "Box")
+        {
+            animator.SetBool("pushing", false);
+        }
+	}
 }

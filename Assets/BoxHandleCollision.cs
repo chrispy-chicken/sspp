@@ -53,6 +53,7 @@ public class BoxHandleCollision : MonoBehaviour
         {
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
         }
+
         //draw a sphere around the box to show the radius
         Debug.DrawLine(transform.position + new Vector3(0f, 0.7f, 0f), transform.position + new Vector3(0f, 0.4f, 0f) + new Vector3(r, 0, 0), Color.red);
         Debug.DrawLine(transform.position + new Vector3(0f, 0.7f, 0f), transform.position + new Vector3(0f, 0.4f, 0f) + new Vector3(-r, 0, 0), Color.red);
