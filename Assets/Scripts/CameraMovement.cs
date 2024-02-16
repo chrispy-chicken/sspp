@@ -13,18 +13,19 @@ public class CameraMovement : MonoBehaviour
     void Start()
     {
         // with different areas this might need to be adjusted with a lookup table or something
-        bool freecam = true;
+        bool freecam = false;
 
         
 
-        maxPos = new Vector2(5f, 2f);
+        maxPos = new Vector2(3.6f, -16f);
+        minPos = new Vector2(-22f, -34f);
 
         if (freecam)
         {
             maxPos = new Vector2(1000f, 1000f);
+            minPos = - maxPos; 
         }
 
-        minPos = - maxPos; 
     }
     void LateUpdate()
     {
@@ -38,5 +39,12 @@ public class CameraMovement : MonoBehaviour
             transform.position = Vector3.Lerp(transform.position, targetPosition, smoothing);
         }
 
+
+    }
+    
+    public void SetCameraBoundsFloats(Vector2 max, Vector2 min)
+    {
+        maxPos = max;
+        minPos = min;
     }
 }

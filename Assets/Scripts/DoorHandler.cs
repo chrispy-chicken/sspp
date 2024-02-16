@@ -31,7 +31,6 @@ public class DoorHandler : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     public void OpenTheNoorOrCloseTheNoorKutLangeNaamFunctieLol(bool open)
     {   
         // sesam open
@@ -56,7 +55,7 @@ public class DoorHandler : MonoBehaviour
         // teleporteren
         other.transform.position = new Vector2 (targetLocation.x, targetLocation.y);
         
-
+        yield return new WaitForSeconds(0.5f);
 
     }
 }
