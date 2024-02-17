@@ -44,6 +44,7 @@ public class DialogueHandler : MonoBehaviour
 
     IEnumerator Destroy_after_delay(GameObject speechBubble)
     {
+        Debug.Log($"yes! {BubbleContainer}");
         yield return new WaitForSeconds(bubbleDelay);
 
         Destroy(speechBubble);
