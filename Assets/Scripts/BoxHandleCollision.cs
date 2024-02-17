@@ -15,8 +15,11 @@ public class BoxHandleCollision : MonoBehaviour
     public bool hitBox;
     Vector2 direction;
 
+    public Vector3 originalPosition;
+
     void Start()
-    {
+    {   
+        originalPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
         lastVelocity = new Vector2(0, 0);

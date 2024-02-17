@@ -8,12 +8,15 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     public Vector3 speedVector;
     private Animator animator;
+    public Animator transition;
     private SpriteRenderer sr;
     PlayerHealth playerHealth;
     public int maxStamina = 100;
     private int stamina;
     private bool needToRecover = false;
+    public bool frozen = false;
     
+    public Vector3 checkPointPosition = new Vector3(6f, -19f, 0);
 
     GameObject staminaBar;
     void Start()
@@ -31,9 +34,8 @@ public class PlayerMovement : MonoBehaviour
         // 2d sprite movement with the wasd keys
         speedVector = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0f).normalized;
         
-        if (speedVector != Vector3.zero)
+        if (speedVector != Vector3.zero && !frozen)
         {
-
             MovePlayer();
             animator.SetFloat("moveX", speedVector.x);
             animator.SetFloat("moveY", speedVector.y);
@@ -113,4 +115,27 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("pushing", false);
         }
 	}
+
+    public void ResetRooms()
+    {   
+        // when called, all boxes will be reset and the player will be teleported to the start of the room
+        StartCoroutine(ResetPlayer());
+    }
+
+    IEnumerator ResetPlayer()
+    {
+        // begin de fade out
+        transition.SetTrigger("Start");
+        // effe wachten
+        yield return new WaitForSeconds(1);
+        
+        // Resetten
+        GameObject[] boxList = GameObject.FindGameObjectsWithTag("Box");
+        
+        foreach (var box in boxList)
+        {
+            box.transform.position = box.GetComponent<BoxHandleCollision>().originalPosition;
+        }
+        transform.position = checkPointPosition;
+    }
 }
