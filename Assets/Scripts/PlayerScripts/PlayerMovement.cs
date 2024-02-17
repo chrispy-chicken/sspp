@@ -48,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space) && !needToRecover)
         {
-            speed = 0.2f;
+            speed = 0.1f;
             if (stamina > 0)
             {
                 stamina--;
