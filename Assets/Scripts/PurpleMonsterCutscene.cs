@@ -17,6 +17,7 @@ public class PurpleMonsterCutscene : MonoBehaviour
     SoundHandler sh;
     //private Animator animator; // fuck animating
 
+    GameObject[] boxes;
     void Start()
     {
 
@@ -25,6 +26,7 @@ public class PurpleMonsterCutscene : MonoBehaviour
         // animator = GetComponent<Animator>();
         pmai = GetComponent<PurpleMonsterBossAI>();
         sh = GetComponent<SoundHandler>();
+        boxes = GameObject.FindGameObjectsWithTag("bossBox");
 
         if (!isReady)
         {
@@ -33,23 +35,31 @@ public class PurpleMonsterCutscene : MonoBehaviour
             // set Freeze Position X in the constraints of the Rigidbody2D component to false
             rb.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
 
-            transform.position = new Vector3(5.5f, 1f, 0.2f); // hardcode starting position 
+            transform.position = new Vector3(-107.8f, 130f, 0f); // hardcode starting position 
         }
         else
         {
+            // this code should not run
             transform.position = new Vector3(-9.29f, 1f, 0.2f); // starting position
         }
+
+        // for each box, ignore collision with enemy. Physics2D.IgnoreCollision(box.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+        for (int i = 0; i < boxes.Length; i++)
+        {
+            Physics2D.IgnoreCollision(boxes[i].GetComponent<Collider2D>(), GetComponent<Collider2D>());
+        }
+
     }
 
     void FixedUpdate()
     {
-        if (transform.position.x < 5f && !isReady)
+        if (transform.position.x < -108f && !isReady)
         {
             sh.PlaySliding();
         }
 
         if (!isReady && !pmai.isActive) { 
-            if (transform.position.x < -9.29f && !isAwake && !stopper) // -9.29f is the portal like ground in the level
+            if (transform.position.x < -111f && !isAwake && !stopper) // -9.29f is the portal like ground in the level
             {
                 sh.StopSlidingSoundEffect();
                 isAwake = true;
@@ -104,6 +114,10 @@ public class PurpleMonsterCutscene : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         Scream();
+        for (int i = 0; i < boxes.Length; i++)
+        {
+            boxes[i].GetComponent<MoveBossBoxes>().moveToNode = true;
+        }
         playIntroFlips = false;
     }
 

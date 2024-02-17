@@ -12,6 +12,9 @@ TagManager:
   - Box
   - boxDot
   - DialogueCanvas
+  - enemy
+  - WhatHaveYouDone?
+  - bossBox
   layers:
   - Default
   - TransparentFX
