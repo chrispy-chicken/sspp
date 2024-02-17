@@ -13,6 +13,9 @@ public class PurpleMonsterBossAI : MonoBehaviour
     private float speed = 0.05f;
     private bool stopMoving = false;
     private int random;
+    private bool trackPlayer = true;
+    bool playerInSight = false;
+    Vector2 playerPosition;
 
     void Start()
     {
@@ -86,19 +89,44 @@ public class PurpleMonsterBossAI : MonoBehaviour
         random = Random.Range(1, 1000);
         if (random == 1)
         {
-            speed = 0.2f;
             OpenMouth();
             StartCoroutine(CloseMouthAfterTime());
         }
 
-        rb.MovePosition(Vector2.MoveTowards(transform.position, player.transform.position, speed));
+        if (trackPlayer)
+        {
+            rb.MovePosition(Vector2.MoveTowards(transform.position, player.transform.position, speed));
+        }
+        else
+        {
+            // fetch player position and only move towards that specific position
+            if (!playerInSight)
+            {
+                playerPosition = player.transform.position;
+                playerInSight = true;
+            }
+            else
+            {
+                rb.MovePosition(Vector2.MoveTowards(transform.position, playerPosition, speed));
+                if (new Vector2(transform.position.x , transform.position.y) == playerPosition)
+                {
+                    playerPosition = player.transform.position;
+                }
+            }
+
+        }
     }
 
     IEnumerator CloseMouthAfterTime()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
+        speed = 0.2f;
+        trackPlayer = false;
+        yield return new WaitForSeconds(2);
 
         speed = 0.05f;
+        trackPlayer = true;
+        playerInSight = false;
         CloseMouth();
     }
 
