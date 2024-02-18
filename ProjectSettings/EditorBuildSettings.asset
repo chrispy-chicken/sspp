@@ -7,14 +7,11 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/Main Menu.unity
-    guid: 728aaf5e47b744b47a93130f7d304a2b
+    guid: ab7d660c693c10149b99e61f1d005549
   - enabled: 1
-    path: Assets/Scenes/MainGame.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/GameMap.unity
+    guid: 01d22c767a8a23c4693b85f43305ab16
   - enabled: 1
-    path: Assets/Scenes/MainGame 1.unity
-    guid: 209198f72c4624641b0b5ef242f6e76f
-  - enabled: 1
-    path: Assets/Scenes/Main Menu 1.unity
-    guid: 72facf46a255cf04e9e093f470433c23
+    path: Assets/Scenes/YouWin.unity
+    guid: 07800a831593f0741ad8730d7962ff44
   m_configObjects: {}

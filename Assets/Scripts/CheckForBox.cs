@@ -19,7 +19,7 @@ public class CheckForBox : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Box" || other.gameObject.tag == "Player")
+        if (((other.gameObject.tag == "Box" || other.gameObject.tag == "bossBox") && other.gameObject.GetComponent<SpriteRenderer>().color == Color.white) || other.gameObject.tag == "Player")
         {
             numActive++;
             

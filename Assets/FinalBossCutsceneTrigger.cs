@@ -33,11 +33,11 @@ public class FinalBossCutsceneTrigger : MonoBehaviour
             return;
         }
 
-        if (finalBoss.transform.position.y > 119 && startBossMoving)
+        if (finalBoss.transform.position.y > 117.5f && startBossMoving)
         {
             finalBoss.transform.position = new Vector3(finalBoss.transform.position.x, finalBoss.transform.position.y - 0.1f, finalBoss.transform.position.z);
         }
-        else if (finalBoss.transform.position.y <= 119 && startBossMoving)
+        else if (finalBoss.transform.position.y <= 117.5f && startBossMoving)
         {
             player.GetComponent<PlayerMovement>().enabled = true;
             stopUpdating = true;

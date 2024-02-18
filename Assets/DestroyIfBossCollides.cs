@@ -9,6 +9,7 @@ public class DestroyIfBossCollides : MonoBehaviour
         if (collision.gameObject.tag == "enemy")
         {
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            Destroy(gameObject);
             StartCoroutine(DestroyAfterSeconds(0.5f));
         }
     }
@@ -16,6 +17,5 @@ public class DestroyIfBossCollides : MonoBehaviour
     IEnumerator DestroyAfterSeconds(float seconds)
     {
         yield return new WaitForSeconds(seconds);
-        Destroy(gameObject);
     }
 }

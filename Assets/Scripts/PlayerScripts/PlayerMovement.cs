@@ -15,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
     private int stamina;
     private bool needToRecover = false;
     public bool frozen = false;
+
+    public int finalPlates = 0;
     
     public Vector3 checkPointPosition = new Vector3(6f, -19f, 0);
 
@@ -31,6 +33,13 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (finalPlates == 5)
+        {
+            Debug.Log("You win!");
+            UnityEngine.SceneManagement.SceneManager.LoadScene("YouWin");
+        }
+
+
         // 2d sprite movement with the wasd keys
         speedVector = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0f).normalized;
         
@@ -102,7 +111,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnCollisionEnter2D (Collision2D other) 
 	{   
-        if (other.gameObject.tag == "Box")
+        if (other.gameObject.tag == "Box" || other.gameObject.tag == "bossBox")
         {
             animator.SetBool("pushing", true);
         }
@@ -110,7 +119,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnCollisionExit2D (Collision2D other) 
 	{
-		if (other.gameObject.tag == "Box")
+		if (other.gameObject.tag == "Box" || other.gameObject.tag == "bossBox")
         {
             animator.SetBool("pushing", false);
         }

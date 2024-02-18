@@ -35,7 +35,7 @@ public class PurpleMonsterCutscene : MonoBehaviour
             // set Freeze Position X in the constraints of the Rigidbody2D component to false
             rb.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
 
-            transform.position = new Vector3(-107.8f, 130f, 0f); // hardcode starting position 
+            transform.position = new Vector3(-107.13f, 130.9f, 0f); // hardcode starting position 
         }
         else
         {
@@ -59,7 +59,7 @@ public class PurpleMonsterCutscene : MonoBehaviour
         }
 
         if (!isReady && !pmai.isActive) { 
-            if (transform.position.x < -111f && !isAwake && !stopper) // -9.29f is the portal like ground in the level
+            if (transform.position.x < -114f && !isAwake && !stopper) 
             {
                 sh.StopSlidingSoundEffect();
                 isAwake = true;

@@ -18,11 +18,11 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("MainGame");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("GameMap");
     }
 
-    public void ContinueGame()
+    /*public void ContinueGame()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("MainGame 1");
-    }
+    }*/
 }
