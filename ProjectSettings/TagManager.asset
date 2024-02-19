@@ -15,6 +15,7 @@ TagManager:
   - enemy
   - WhatHaveYouDone?
   - bossBox
+  - plate
   layers:
   - Default
   - TransparentFX

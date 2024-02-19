@@ -18,7 +18,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (health == 0)
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("Main Menu");
+            UnityEngine.SceneManagement.SceneManager.LoadScene("GameMapBoss");
         }
         foreach (GameObject heart in hearts)
         {

@@ -137,6 +137,9 @@ public class PlayerMovement : MonoBehaviour
         transition.SetTrigger("Start");
         // effe wachten
         yield return new WaitForSeconds(1);
+
+        // load scene "GameMapReset"
+        UnityEngine.SceneManagement.SceneManager.LoadScene("GameMapReset");
         
         // Resetten
         GameObject[] boxList = GameObject.FindGameObjectsWithTag("Box");
@@ -146,5 +149,12 @@ public class PlayerMovement : MonoBehaviour
             box.transform.position = box.GetComponent<BoxHandleCollision>().originalPosition;
         }
         transform.position = checkPointPosition;
+
+        // for each button with tag "plate", call the manualreset function
+        /*GameObject[] plateList = GameObject.FindGameObjectsWithTag("plate");
+        foreach (var plate in plateList)
+        {
+            plate.GetComponent<CheckForBox>().ManualReset();
+        }*/
     }
 }

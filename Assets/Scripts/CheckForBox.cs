@@ -55,4 +55,25 @@ public class CheckForBox : MonoBehaviour
             }
         }
     }
+
+    public void ManualReset()
+    {
+        // find the nearest object with tag "Box" 
+        GameObject[] boxList = GameObject.FindGameObjectsWithTag("Box");
+        GameObject nearestBox = null;
+        float nearestDistance = Mathf.Infinity;
+        foreach (var box in boxList)
+        {
+            float distance = Vector2.Distance(transform.position, box.transform.position);
+            if (distance < nearestDistance)
+            {
+                nearestBox = box;
+                nearestDistance = distance;
+            }
+        }
+
+        Collider2D other = nearestBox.GetComponent<Collider2D>();
+        // call the ontriggerexit function
+        OnTriggerExit2D(other);
+    }
 }

@@ -108,10 +108,11 @@ public class PurpleMonsterBossAI : MonoBehaviour
             else
             {
                 rb.MovePosition(Vector2.MoveTowards(transform.position, playerPosition, speed));
-                if (new Vector2(transform.position.x, transform.position.y) == playerPosition)
+                // this makes the game super duper hard
+                /*if (new Vector2(transform.position.x, transform.position.y) == playerPosition)
                 {
                     playerPosition = player.transform.position;
-                }
+                }*/
             }
 
         }
