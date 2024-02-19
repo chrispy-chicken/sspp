@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/YouWin.unity
     guid: 07800a831593f0741ad8730d7962ff44
+  - enabled: 1
+    path: Assets/Scenes/GameMapReset.unity
+    guid: 937f79b24de76eb41a6a423fd2b12784
+  - enabled: 1
+    path: Assets/Scenes/GameMapBoss.unity
+    guid: 94cba3bb512af614db91c6fed93d80aa
   m_configObjects: {}
